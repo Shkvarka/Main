@@ -54,8 +54,10 @@ jobs:
       name: Lighthouse CI
       runs-on: ubuntu-latest
       steps:
-          - name: Deploy Web to netlify
-            run: pwd
+          - name: get WD and list of files
+            run: |
+                pwd
+                ls -a
           - name: Run Lighthouse against a static dist dir
             uses: treosh/lighthouse-ci-action@v2
             with:
