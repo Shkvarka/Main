@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./web"
+      "staticDistDir": "./web/public"
     }
   }
 }
