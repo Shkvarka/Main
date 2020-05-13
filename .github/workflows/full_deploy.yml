@@ -50,3 +50,12 @@ jobs:
         with:
           args: deploy --dir=web/public --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID","SANITY_DEPLOY_STUDIO_TOKEN"]'
+  lhci:
+      name: Lighthouse CI
+      runs-on: ubuntu-latest
+      steps:
+          - name: run Lighthouse CI
+            run: |
+                npm install -g @lhci/cli@0.3.x
+                lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+                
